@@ -49,6 +49,13 @@ namespace Winform_Project
 
         }
 
+        public void SetiingisAtacked(int x, int y, Tabla TABLA)
+        {
+            MiscareLegala(x, y, TABLA, true);
+
+
+        }
+
 
     }
 

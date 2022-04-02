@@ -15,8 +15,7 @@ namespace Winform_Project
         static void Main()
         {
           
-           
-            
+          
 
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();

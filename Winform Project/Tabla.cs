@@ -108,7 +108,7 @@ namespace Winform_Project
                     {
                         if (TABLA[i, j].GetIsOcupat())
                             if (TABLA[i, j].GetPiesa().GetisAlb() == turn)
-                                TABLA[i, j].GetPiesa().MiscareLegala(i, j, this, true);
+                                TABLA[i, j].GetPiesa().SetiingisAtacked(i, j, this);
                     }
             }
 
