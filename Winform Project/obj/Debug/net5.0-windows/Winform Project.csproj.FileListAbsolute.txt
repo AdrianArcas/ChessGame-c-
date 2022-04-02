@@ -1,0 +1,19 @@
+C:\Users\adria\source\repos\Winform Project\Winform Project\bin\Debug\net5.0-windows\Winform Project.exe
+C:\Users\adria\source\repos\Winform Project\Winform Project\bin\Debug\net5.0-windows\Winform Project.deps.json
+C:\Users\adria\source\repos\Winform Project\Winform Project\bin\Debug\net5.0-windows\Winform Project.runtimeconfig.json
+C:\Users\adria\source\repos\Winform Project\Winform Project\bin\Debug\net5.0-windows\Winform Project.runtimeconfig.dev.json
+C:\Users\adria\source\repos\Winform Project\Winform Project\bin\Debug\net5.0-windows\Winform Project.dll
+C:\Users\adria\source\repos\Winform Project\Winform Project\bin\Debug\net5.0-windows\ref\Winform Project.dll
+C:\Users\adria\source\repos\Winform Project\Winform Project\bin\Debug\net5.0-windows\Winform Project.pdb
+C:\Users\adria\source\repos\Winform Project\Winform Project\obj\Debug\net5.0-windows\Winform Project.csproj.AssemblyReference.cache
+C:\Users\adria\source\repos\Winform Project\Winform Project\obj\Debug\net5.0-windows\Winform_Project.Form1.resources
+C:\Users\adria\source\repos\Winform Project\Winform Project\obj\Debug\net5.0-windows\Winform Project.csproj.GenerateResource.cache
+C:\Users\adria\source\repos\Winform Project\Winform Project\obj\Debug\net5.0-windows\Winform Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adria\source\repos\Winform Project\Winform Project\obj\Debug\net5.0-windows\Winform Project.AssemblyInfoInputs.cache
+C:\Users\adria\source\repos\Winform Project\Winform Project\obj\Debug\net5.0-windows\Winform Project.AssemblyInfo.cs
+C:\Users\adria\source\repos\Winform Project\Winform Project\obj\Debug\net5.0-windows\Winform Project.csproj.CoreCompileInputs.cache
+C:\Users\adria\source\repos\Winform Project\Winform Project\obj\Debug\net5.0-windows\Winform Project.dll
+C:\Users\adria\source\repos\Winform Project\Winform Project\obj\Debug\net5.0-windows\ref\Winform Project.dll
+C:\Users\adria\source\repos\Winform Project\Winform Project\obj\Debug\net5.0-windows\Winform Project.pdb
+C:\Users\adria\source\repos\Winform Project\Winform Project\obj\Debug\net5.0-windows\Winform Project.genruntimeconfig.cache
+C:\Users\adria\source\repos\Winform Project\Winform Project\obj\Debug\net5.0-windows\Winform_Project.Form2.resources
