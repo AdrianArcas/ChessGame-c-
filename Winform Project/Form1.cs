@@ -272,8 +272,6 @@ namespace Winform_Project
 
             Coloreaza(btnTabla, Mytabla);
 
-
-
         }
 
 
@@ -294,10 +292,7 @@ namespace Winform_Project
                     else
                         btnTabla[i, j].BackColor = Color.White;
 
-                    /*if (Mytabla.TABLA[i, j].GetisAtacat() == true)
-                        btnTabla[i, j].Image = verde;
-                    else btnTabla[i, j].Image = null;*/
-
+                  
                     if (Mytabla.TABLA[i, j].GetIsLegal() == true)
                         btnTabla[i, j].BackColor = Color.Green;
 
@@ -344,6 +339,7 @@ namespace Winform_Project
                             if (Mytabla.TABLA[i, j].GetPiesa().Getnume() == "Nebun")
                                 btnTabla[i, j].Image = nebunn;
                         }
+                   
 
 
 
