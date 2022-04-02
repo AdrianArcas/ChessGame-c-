@@ -1,2 +1,2 @@
 # ChessGame #C
-![UML Diagram](UML.jpg)
+![UML Diagram](https://github.com/AdrianArcas/ChessGame-c-/blob/main/UML.png)
