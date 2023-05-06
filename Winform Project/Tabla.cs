@@ -63,13 +63,13 @@ namespace Winform_Project
                 TABLA[i, 1].SetPiesa(new Pion(false));
                 TABLA[i, 1].SetIsOcupat(true);
             }
-            TABLA[1, 9].SetPiesa(new Cal(true));
+            TABLA[1, 9].SetPiesa(new WazirCal(true));
             TABLA[1, 9].SetIsOcupat(true);
-            TABLA[8, 9].SetPiesa(new Cal(true));
+            TABLA[8, 9].SetPiesa(new FertzCal(true));
             TABLA[8, 9].SetIsOcupat(true);
-            TABLA[1, 0].SetPiesa(new Cal(false));
+            TABLA[1, 0].SetPiesa(new WazirCal(false));
             TABLA[1, 0].SetIsOcupat(true);
-            TABLA[8, 0].SetPiesa(new Cal(false));
+            TABLA[8, 0].SetPiesa(new FertzCal(false));
             TABLA[8, 0].SetIsOcupat(true);
 
             TABLA[0, 9].SetPiesa(new Tura(true));
@@ -81,6 +81,8 @@ namespace Winform_Project
             TABLA[9, 0].SetPiesa(new Tura(false));
             TABLA[9, 0].SetIsOcupat(true);
 
+            TABLA[5, 5].SetPiesa(new LoonySnakeTura(false));
+            TABLA[5, 5].SetIsOcupat(true);
 
             TABLA[2, 9].SetPiesa(new Nebun(true));
             TABLA[2, 9].SetIsOcupat(true);

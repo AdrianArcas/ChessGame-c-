@@ -132,107 +132,6 @@ namespace Winform_Project
     }
 
 
-
-
-
-
-    class Cal : Piesa
-    {
-        public Cal(bool isAlb)
-        {
-            this.nume = "Cal";
-            this.SetisAlb(isAlb);
-        }
-
-        public override void MiscareLegala(int x, int y, Tabla TablaMea, bool f1 = false)
-        {
-
-            bool Culoare_Curenta;
-            Culoare_Curenta = TablaMea.TABLA[x, y].GetPiesa().GetisAlb();
-
-
-            if (!(x + 2 > Tabla.dimensiune - 1 || x + 2 < 0 || y + 1 > Tabla.dimensiune - 1 || y + 1 < 0))
-                if (!TablaMea.TABLA[x + 2, y + 1].GetIsOcupat() || (TablaMea.TABLA[x + 2, y + 1].GetIsOcupat() && TablaMea.TABLA[x + 2, y + 1].GetPiesa().GetisAlb() != Culoare_Curenta))
-                {
-                    if (!f1)
-                        TablaMea.TABLA[x + 2, y + 1].SetIsLegal(true);
-                    else
-                        TablaMea.TABLA[x + 2, y + 1].SetisAtacat(true);
-                }
-
-            if (!(x - 2 > Tabla.dimensiune - 1 || x - 2 < 0 || y + 1 > Tabla.dimensiune - 1 || y + 1 < 0))
-                if (!TablaMea.TABLA[x - 2, y + 1].GetIsOcupat() || (TablaMea.TABLA[x - 2, y + 1].GetIsOcupat() && TablaMea.TABLA[x - 2, y + 1].GetPiesa().GetisAlb() != Culoare_Curenta))
-                {
-                    if (!f1)
-                        TablaMea.TABLA[x - 2, y + 1].SetIsLegal(true);
-                    else
-                        TablaMea.TABLA[x - 2, y + 1].SetisAtacat(true);
-                }
-
-            if (!(x - 2 > Tabla.dimensiune - 1 || x - 2 < 0 || y - 1 > Tabla.dimensiune - 1 || y - 1 < 0))
-                if (!TablaMea.TABLA[x - 2, y - 1].GetIsOcupat() || (TablaMea.TABLA[x - 2, y - 1].GetIsOcupat() && TablaMea.TABLA[x - 2, y - 1].GetPiesa().GetisAlb() != Culoare_Curenta))
-                {
-                    if (!f1)
-                        TablaMea.TABLA[x - 2, y - 1].SetIsLegal(true);
-                    else
-                        TablaMea.TABLA[x - 2, y - 1].SetisAtacat(true);
-                }
-
-            if (!(x + 2 > Tabla.dimensiune - 1 || x + 2 < 0 || y - 1 > Tabla.dimensiune - 1 || y - 1 < 0))
-                if (!TablaMea.TABLA[x + 2, y - 1].GetIsOcupat() || (TablaMea.TABLA[x + 2, y - 1].GetIsOcupat() && TablaMea.TABLA[x + 2, y - 1].GetPiesa().GetisAlb() != Culoare_Curenta))
-                {
-                    if (!f1)
-                        TablaMea.TABLA[x + 2, y - 1].SetIsLegal(true);
-                    else
-                        TablaMea.TABLA[x + 2, y - 1].SetisAtacat(true);
-                }
-
-            if (!(x + 1 > Tabla.dimensiune - 1 || x + 1 < 0 || y + 2 > Tabla.dimensiune - 1 || y + 2 < 0))
-
-                if (!TablaMea.TABLA[x + 1, y + 2].GetIsOcupat() || (TablaMea.TABLA[x + 1, y + 2].GetIsOcupat() && TablaMea.TABLA[x + 1, y + 2].GetPiesa().GetisAlb() != Culoare_Curenta))
-                {
-                    if (!f1)
-                        TablaMea.TABLA[x + 1, y + 2].SetIsLegal(true);
-                    else
-                        TablaMea.TABLA[x + 1, y + 2].SetisAtacat(true);
-                }
-
-            if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0 || y + 2 > Tabla.dimensiune - 1 || y + 2 < 0))
-                if (!TablaMea.TABLA[x - 1, y + 2].GetIsOcupat() || (TablaMea.TABLA[x - 1, y + 2].GetIsOcupat() && TablaMea.TABLA[x - 1, y + 2].GetPiesa().GetisAlb() != Culoare_Curenta))
-                {
-                    if (!f1)
-                        TablaMea.TABLA[x - 1, y + 2].SetIsLegal(true);
-                    else
-                        TablaMea.TABLA[x - 1, y + 2].SetisAtacat(true);
-                }
-
-            if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0 || y - 2 > Tabla.dimensiune - 1 || y - 2 < 0))
-                if (!TablaMea.TABLA[x - 1, y - 2].GetIsOcupat() || (TablaMea.TABLA[x - 1, y - 2].GetIsOcupat() && TablaMea.TABLA[x - 1, y - 2].GetPiesa().GetisAlb() != Culoare_Curenta))
-                {
-                    if (!f1)
-                        TablaMea.TABLA[x - 1, y - 2].SetIsLegal(true);
-                    else
-                        TablaMea.TABLA[x - 1, y - 2].SetisAtacat(true);
-                }
-
-            if (!(x + 1 > Tabla.dimensiune - 1 || x + 1 < 0 || y - 2 > Tabla.dimensiune - 1 || y - 2 < 0))
-                if (!TablaMea.TABLA[x + 1, y - 2].GetIsOcupat() || (TablaMea.TABLA[x + 1, y - 2].GetIsOcupat() && TablaMea.TABLA[x + 1, y - 2].GetPiesa().GetisAlb() != Culoare_Curenta))
-                {
-
-                    if (!f1)
-                        TablaMea.TABLA[x + 1, y - 2].SetIsLegal(true);
-                    else
-                        TablaMea.TABLA[x + 1, y - 2].SetisAtacat(true);
-
-                }
-
-
-
-        }
-
-
-    }
-
     class Regina : Piesa
     {
         public Regina(bool isAlb)
@@ -816,9 +715,6 @@ namespace Winform_Project
                 }
 
 
-
-
-
             if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0 || y - 1 > Tabla.dimensiune - 1 || y - 1 < 0))
                 if (!TablaMea.TABLA[x - 1, y - 1].GetIsOcupat() || (TablaMea.TABLA[x - 1, y - 1].GetIsOcupat() && TablaMea.TABLA[x - 1, y - 1].GetPiesa().GetisAlb() != Culoare_Curenta))
                 {
@@ -863,6 +759,421 @@ namespace Winform_Project
                         }
                 }
             }
+
+
+
+        }
+    }
+
+    class FertzCal : Piesa
+    {
+        public FertzCal(bool isAlb)
+        {
+            this.nume = "FertzCal";
+            this.SetisAlb(isAlb);
+        }
+
+        public override void MiscareLegala(int x, int y, Tabla TablaMea, bool f1 = false)
+        {
+
+            bool Culoare_Curenta;
+            Culoare_Curenta = TablaMea.TABLA[x, y].GetPiesa().GetisAlb();
+
+
+            if (!(x + 2 > Tabla.dimensiune - 1 || x + 2 < 0 || y + 1 > Tabla.dimensiune - 1 || y + 1 < 0))
+                if (!TablaMea.TABLA[x + 2, y + 1].GetIsOcupat() || (TablaMea.TABLA[x + 2, y + 1].GetIsOcupat() && TablaMea.TABLA[x + 2, y + 1].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x + 2, y + 1].SetIsLegal(true);
+                    else
+                        TablaMea.TABLA[x + 2, y + 1].SetisAtacat(true);
+                }
+
+            if (!(x - 2 > Tabla.dimensiune - 1 || x - 2 < 0 || y + 1 > Tabla.dimensiune - 1 || y + 1 < 0))
+                if (!TablaMea.TABLA[x - 2, y + 1].GetIsOcupat() || (TablaMea.TABLA[x - 2, y + 1].GetIsOcupat() && TablaMea.TABLA[x - 2, y + 1].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x - 2, y + 1].SetIsLegal(true);
+                    else
+                        TablaMea.TABLA[x - 2, y + 1].SetisAtacat(true);
+                }
+
+            if (!(x - 2 > Tabla.dimensiune - 1 || x - 2 < 0 || y - 1 > Tabla.dimensiune - 1 || y - 1 < 0))
+                if (!TablaMea.TABLA[x - 2, y - 1].GetIsOcupat() || (TablaMea.TABLA[x - 2, y - 1].GetIsOcupat() && TablaMea.TABLA[x - 2, y - 1].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x - 2, y - 1].SetIsLegal(true);
+                    else
+                        TablaMea.TABLA[x - 2, y - 1].SetisAtacat(true);
+                }
+
+            if (!(x + 2 > Tabla.dimensiune - 1 || x + 2 < 0 || y - 1 > Tabla.dimensiune - 1 || y - 1 < 0))
+                if (!TablaMea.TABLA[x + 2, y - 1].GetIsOcupat() || (TablaMea.TABLA[x + 2, y - 1].GetIsOcupat() && TablaMea.TABLA[x + 2, y - 1].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x + 2, y - 1].SetIsLegal(true);
+                    else
+                        TablaMea.TABLA[x + 2, y - 1].SetisAtacat(true);
+                }
+
+            if (!(x + 1 > Tabla.dimensiune - 1 || x + 1 < 0 || y + 2 > Tabla.dimensiune - 1 || y + 2 < 0))
+
+                if (!TablaMea.TABLA[x + 1, y + 2].GetIsOcupat() || (TablaMea.TABLA[x + 1, y + 2].GetIsOcupat() && TablaMea.TABLA[x + 1, y + 2].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x + 1, y + 2].SetIsLegal(true);
+                    else
+                        TablaMea.TABLA[x + 1, y + 2].SetisAtacat(true);
+                }
+
+            if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0 || y + 2 > Tabla.dimensiune - 1 || y + 2 < 0))
+                if (!TablaMea.TABLA[x - 1, y + 2].GetIsOcupat() || (TablaMea.TABLA[x - 1, y + 2].GetIsOcupat() && TablaMea.TABLA[x - 1, y + 2].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x - 1, y + 2].SetIsLegal(true);
+                    else
+                        TablaMea.TABLA[x - 1, y + 2].SetisAtacat(true);
+                }
+
+            if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0 || y - 2 > Tabla.dimensiune - 1 || y - 2 < 0))
+                if (!TablaMea.TABLA[x - 1, y - 2].GetIsOcupat() || (TablaMea.TABLA[x - 1, y - 2].GetIsOcupat() && TablaMea.TABLA[x - 1, y - 2].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x - 1, y - 2].SetIsLegal(true);
+                    else
+                        TablaMea.TABLA[x - 1, y - 2].SetisAtacat(true);
+                }
+
+            if (!(x + 1 > Tabla.dimensiune - 1 || x + 1 < 0 || y - 2 > Tabla.dimensiune - 1 || y - 2 < 0))
+                if (!TablaMea.TABLA[x + 1, y - 2].GetIsOcupat() || (TablaMea.TABLA[x + 1, y - 2].GetIsOcupat() && TablaMea.TABLA[x + 1, y - 2].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+
+                    if (!f1)
+                        TablaMea.TABLA[x + 1, y - 2].SetIsLegal(true);
+                    else
+                        TablaMea.TABLA[x + 1, y - 2].SetisAtacat(true);
+
+                }
+
+            if (!(x + 1 > Tabla.dimensiune - 1 || x + 1 < 0 || y + 1 > Tabla.dimensiune - 1 || y + 1 < 0))
+                if (!TablaMea.TABLA[x + 1, y + 1].GetIsOcupat() || (TablaMea.TABLA[x + 1, y + 1].GetIsOcupat() && TablaMea.TABLA[x + 1, y + 1].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x + 1, y + 1].SetIsLegal(true);
+                    else TablaMea.TABLA[x + 1, y + 1].SetisAtacat(true);
+                }
+            if (!(x + 1 > Tabla.dimensiune - 1 || x + 1 < 0 || y - 1 > Tabla.dimensiune - 1 || y - 1 < 0))
+                if (!TablaMea.TABLA[x + 1, y - 1].GetIsOcupat() || (TablaMea.TABLA[x + 1, y - 1].GetIsOcupat() && TablaMea.TABLA[x + 1, y - 1].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x + 1, y - 1].SetIsLegal(true);
+                    else TablaMea.TABLA[x + 1, y - 1].SetisAtacat(true);
+                }
+
+
+
+            if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0 || y + 1 > Tabla.dimensiune - 1 || y + 1 < 0))
+                if (!TablaMea.TABLA[x - 1, y + 1].GetIsOcupat() || (TablaMea.TABLA[x - 1, y + 1].GetIsOcupat() && TablaMea.TABLA[x - 1, y + 1].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x - 1, y + 1].SetIsLegal(true);
+                    else TablaMea.TABLA[x - 1, y + 1].SetisAtacat(true);
+                }
+
+            if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0 || y - 1 > Tabla.dimensiune - 1 || y - 1 < 0))
+                if (!TablaMea.TABLA[x - 1, y - 1].GetIsOcupat() || (TablaMea.TABLA[x - 1, y - 1].GetIsOcupat() && TablaMea.TABLA[x - 1, y - 1].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x - 1, y - 1].SetIsLegal(true);
+                    else TablaMea.TABLA[x - 1, y - 1].SetisAtacat(true);
+                }
+
+        }
+
+
+    }
+    class WazirCal : Piesa
+    {
+        public WazirCal(bool isAlb)
+        {
+            this.nume = "WazirCal";
+            this.SetisAlb(isAlb);
+        }
+
+        public override void MiscareLegala(int x, int y, Tabla TablaMea, bool f1 = false)
+        {
+
+            bool Culoare_Curenta;
+            Culoare_Curenta = TablaMea.TABLA[x, y].GetPiesa().GetisAlb();
+
+
+            if (!(x + 2 > Tabla.dimensiune - 1 || x + 2 < 0 || y + 1 > Tabla.dimensiune - 1 || y + 1 < 0))
+                if (!TablaMea.TABLA[x + 2, y + 1].GetIsOcupat() || (TablaMea.TABLA[x + 2, y + 1].GetIsOcupat() && TablaMea.TABLA[x + 2, y + 1].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x + 2, y + 1].SetIsLegal(true);
+                    else
+                        TablaMea.TABLA[x + 2, y + 1].SetisAtacat(true);
+                }
+
+            if (!(x - 2 > Tabla.dimensiune - 1 || x - 2 < 0 || y + 1 > Tabla.dimensiune - 1 || y + 1 < 0))
+                if (!TablaMea.TABLA[x - 2, y + 1].GetIsOcupat() || (TablaMea.TABLA[x - 2, y + 1].GetIsOcupat() && TablaMea.TABLA[x - 2, y + 1].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x - 2, y + 1].SetIsLegal(true);
+                    else
+                        TablaMea.TABLA[x - 2, y + 1].SetisAtacat(true);
+                }
+
+            if (!(x - 2 > Tabla.dimensiune - 1 || x - 2 < 0 || y - 1 > Tabla.dimensiune - 1 || y - 1 < 0))
+                if (!TablaMea.TABLA[x - 2, y - 1].GetIsOcupat() || (TablaMea.TABLA[x - 2, y - 1].GetIsOcupat() && TablaMea.TABLA[x - 2, y - 1].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x - 2, y - 1].SetIsLegal(true);
+                    else
+                        TablaMea.TABLA[x - 2, y - 1].SetisAtacat(true);
+                }
+
+            if (!(x + 2 > Tabla.dimensiune - 1 || x + 2 < 0 || y - 1 > Tabla.dimensiune - 1 || y - 1 < 0))
+                if (!TablaMea.TABLA[x + 2, y - 1].GetIsOcupat() || (TablaMea.TABLA[x + 2, y - 1].GetIsOcupat() && TablaMea.TABLA[x + 2, y - 1].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x + 2, y - 1].SetIsLegal(true);
+                    else
+                        TablaMea.TABLA[x + 2, y - 1].SetisAtacat(true);
+                }
+
+            if (!(x + 1 > Tabla.dimensiune - 1 || x + 1 < 0 || y + 2 > Tabla.dimensiune - 1 || y + 2 < 0))
+
+                if (!TablaMea.TABLA[x + 1, y + 2].GetIsOcupat() || (TablaMea.TABLA[x + 1, y + 2].GetIsOcupat() && TablaMea.TABLA[x + 1, y + 2].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x + 1, y + 2].SetIsLegal(true);
+                    else
+                        TablaMea.TABLA[x + 1, y + 2].SetisAtacat(true);
+                }
+
+            if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0 || y + 2 > Tabla.dimensiune - 1 || y + 2 < 0))
+                if (!TablaMea.TABLA[x - 1, y + 2].GetIsOcupat() || (TablaMea.TABLA[x - 1, y + 2].GetIsOcupat() && TablaMea.TABLA[x - 1, y + 2].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x - 1, y + 2].SetIsLegal(true);
+                    else
+                        TablaMea.TABLA[x - 1, y + 2].SetisAtacat(true);
+                }
+
+            if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0 || y - 2 > Tabla.dimensiune - 1 || y - 2 < 0))
+                if (!TablaMea.TABLA[x - 1, y - 2].GetIsOcupat() || (TablaMea.TABLA[x - 1, y - 2].GetIsOcupat() && TablaMea.TABLA[x - 1, y - 2].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x - 1, y - 2].SetIsLegal(true);
+                    else
+                        TablaMea.TABLA[x - 1, y - 2].SetisAtacat(true);
+                }
+
+            if (!(x + 1 > Tabla.dimensiune - 1 || x + 1 < 0 || y - 2 > Tabla.dimensiune - 1 || y - 2 < 0))
+                if (!TablaMea.TABLA[x + 1, y - 2].GetIsOcupat() || (TablaMea.TABLA[x + 1, y - 2].GetIsOcupat() && TablaMea.TABLA[x + 1, y - 2].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+
+                    if (!f1)
+                        TablaMea.TABLA[x + 1, y - 2].SetIsLegal(true);
+                    else
+                        TablaMea.TABLA[x + 1, y - 2].SetisAtacat(true);
+
+                }
+
+            if (!(x + 1 > Tabla.dimensiune - 1 || x + 1 < 0))
+                if (!TablaMea.TABLA[x + 1, y].GetIsOcupat() || (TablaMea.TABLA[x + 1, y].GetIsOcupat() && TablaMea.TABLA[x + 1, y].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x + 1, y].SetIsLegal(true);
+                    else TablaMea.TABLA[x + 1, y].SetisAtacat(true);
+                }
+
+
+
+
+            if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0))
+                if (!TablaMea.TABLA[x - 1, y].GetIsOcupat() || (TablaMea.TABLA[x - 1, y].GetIsOcupat() && TablaMea.TABLA[x - 1, y].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x - 1, y].SetIsLegal(true);
+                    else TablaMea.TABLA[x - 1, y].SetisAtacat(true);
+                }
+
+
+            if (!(y + 1 > Tabla.dimensiune - 1 || y + 1 < 0))
+                if (!TablaMea.TABLA[x, y + 1].GetIsOcupat() || (TablaMea.TABLA[x, y + 1].GetIsOcupat() && TablaMea.TABLA[x, y + 1].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x, y + 1].SetIsLegal(true);
+                    else TablaMea.TABLA[x, y + 1].SetisAtacat(true);
+                }
+
+            if (!(y - 1 > Tabla.dimensiune - 1 || y - 1 < 0))
+                if (!TablaMea.TABLA[x, y - 1].GetIsOcupat() || (TablaMea.TABLA[x, y - 1].GetIsOcupat() && TablaMea.TABLA[x, y - 1].GetPiesa().GetisAlb() != Culoare_Curenta))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x, y - 1].SetIsLegal(true);
+                    else TablaMea.TABLA[x, y - 1].SetisAtacat(true);
+                }
+        }
+    }
+
+    class LoonySnakeTura : Piesa
+    {
+
+
+        public LoonySnakeTura(bool isAlb)
+        {
+            this.nume = "LoonySnakeTura";
+            this.SetisAlb(isAlb);
+        }
+        public override void MiscareLegala(int x, int y, Tabla TablaMea, bool f1 = false)
+        {
+
+            bool Culoare_Curenta;
+
+            Culoare_Curenta = TablaMea.TABLA[x, y].GetPiesa().GetisAlb();
+
+            for (int i = 1; i < Tabla.dimensiune; i++)
+            {
+                if (!(x + i > Tabla.dimensiune - 1 || x + i < 0))
+                {
+                    if (!TablaMea.TABLA[x + i, y].GetIsOcupat())
+                    {
+                        if (!f1)
+                            TablaMea.TABLA[x + i, y].SetIsLegal(true);
+                        else
+                            TablaMea.TABLA[x + i, y].SetisAtacat(true);
+                    }
+                    else
+                    if (TablaMea.TABLA[x + i, y].GetIsOcupat() && TablaMea.TABLA[x + i, y].GetPiesa().GetisAlb() != Culoare_Curenta)
+                    {
+                        if (!f1)
+                            TablaMea.TABLA[x + i, y].SetIsLegal(true);
+                        else
+                            TablaMea.TABLA[x + i, y].SetisAtacat(true);
+
+                        break;
+                    }
+                    else break;
+                }
+                else break;
+            }
+            ////////////
+            for (int i = 1; i < Tabla.dimensiune; i++)
+            {
+                if (!(x - i > Tabla.dimensiune - 1 || x - i < 0))
+                {
+                    if (!TablaMea.TABLA[x - i, y].GetIsOcupat())
+                    {
+                        if (!f1)
+                            TablaMea.TABLA[x - i, y].SetIsLegal(true);
+                        else
+                            TablaMea.TABLA[x - i, y].SetisAtacat(true);
+                    }
+                    else
+                    if (TablaMea.TABLA[x - i, y].GetIsOcupat() && TablaMea.TABLA[x - i, y].GetPiesa().GetisAlb() != Culoare_Curenta)
+                    {
+                        if (!f1)
+                            TablaMea.TABLA[x - i, y].SetIsLegal(true);
+                        else
+                            TablaMea.TABLA[x - i, y].SetisAtacat(true);
+                        break;
+                    }
+                    else break;
+                }
+                else break;
+            }
+            ///////////////////
+            for (int i = 1; i < Tabla.dimensiune; i++)
+            {
+                if (!(y + i > Tabla.dimensiune - 1 || y + i < 0))
+                {
+                    if (!TablaMea.TABLA[x, y + i].GetIsOcupat())
+                    {
+                        if (!f1)
+                            TablaMea.TABLA[x, y + i].SetIsLegal(true);
+                        else
+                            TablaMea.TABLA[x, y + i].SetisAtacat(true);
+                    }
+                    else
+                    if (TablaMea.TABLA[x, y + i].GetIsOcupat() && TablaMea.TABLA[x, y + i].GetPiesa().GetisAlb() != Culoare_Curenta)
+                    {
+                        if (!f1)
+                            TablaMea.TABLA[x, y + i].SetIsLegal(true);
+                        else
+                            TablaMea.TABLA[x, y + i].SetisAtacat(true);
+                        break;
+                    }
+                    else break;
+                }
+                else break;
+            }
+            /////////////////////
+
+            for (int i = 1; i < Tabla.dimensiune; i++)
+            {
+                if (!(y - i > Tabla.dimensiune - 1 || y - i < 0))
+                {
+                    if (!TablaMea.TABLA[x, y - i].GetIsOcupat())
+                    {
+                        if (!f1)
+                            TablaMea.TABLA[x, y - i].SetIsLegal(true);
+                        else
+                            TablaMea.TABLA[x, y - i].SetisAtacat(true);
+                    }
+                    else
+                    if (TablaMea.TABLA[x, y - i].GetIsOcupat() && TablaMea.TABLA[x, y - i].GetPiesa().GetisAlb() != Culoare_Curenta)
+                    {
+                        if (!f1)
+                            TablaMea.TABLA[x, y - i].SetIsLegal(true);
+                        else
+                            TablaMea.TABLA[x, y - i].SetisAtacat(true);
+                        break;
+                    }
+                    else break;
+                }
+                else break;
+            }
+             // conditie posdasdasd
+            if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0 || y - 3 > Tabla.dimensiune - 1 || y - 3< 0))
+                if ((!TablaMea.TABLA[x - 1, y - 3].GetIsOcupat() || (TablaMea.TABLA[x - 1, y - 3].GetIsOcupat() && TablaMea.TABLA[x - 1, y - 3].GetPiesa().GetisAlb() != Culoare_Curenta))&&(!TablaMea.TABLA[x , y - 1].GetIsOcupat()&& !TablaMea.TABLA[x , y - 2].GetIsOcupat()) || (!TablaMea.TABLA[x - 1, y - 1].GetIsOcupat() && !TablaMea.TABLA[x - 1, y - 2].GetIsOcupat()))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x - 1, y - 3].SetIsLegal(true);
+                    else
+                        TablaMea.TABLA[x - 1, y - 3].SetisAtacat(true);
+                }
+
+            if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0 || y - 3 > Tabla.dimensiune - 1 || y - 3 < 0))
+                if ((!TablaMea.TABLA[x + 1, y - 3].GetIsOcupat() || (TablaMea.TABLA[x + 1, y - 3].GetIsOcupat() && TablaMea.TABLA[x + 1, y - 3].GetPiesa().GetisAlb() != Culoare_Curenta)) && (!TablaMea.TABLA[x, y - 1].GetIsOcupat() && !TablaMea.TABLA[x, y - 2].GetIsOcupat()) || (!TablaMea.TABLA[x + 1, y - 1].GetIsOcupat() && !TablaMea.TABLA[x + 1, y - 2].GetIsOcupat()))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x + 1, y - 3].SetIsLegal(true);
+                    else
+                        TablaMea.TABLA[x + 1, y - 3].SetisAtacat(true);
+                }
+
+            //////
+            if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0 || y + 3 > Tabla.dimensiune - 1 || y + 3 < 0))
+                if ((!TablaMea.TABLA[x - 1, y + 3].GetIsOcupat() || (TablaMea.TABLA[x - 1, y + 3].GetIsOcupat() && TablaMea.TABLA[x - 1, y + 3].GetPiesa().GetisAlb() != Culoare_Curenta)) && (!TablaMea.TABLA[x, y + 1].GetIsOcupat() && !TablaMea.TABLA[x, y + 2].GetIsOcupat()) || (!TablaMea.TABLA[x - 1, y + 1].GetIsOcupat() && !TablaMea.TABLA[x - 1, y + 2].GetIsOcupat()))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x - 1, y + 3].SetIsLegal(true);
+                    else
+                        TablaMea.TABLA[x - 1, y + 3].SetisAtacat(true);
+                }
+
+            if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0 || y + 3 > Tabla.dimensiune - 1 || y + 3 < 0))
+                if ((!TablaMea.TABLA[x + 1, y + 3].GetIsOcupat() || (TablaMea.TABLA[x + 1, y + 3].GetIsOcupat() && TablaMea.TABLA[x + 1, y + 3].GetPiesa().GetisAlb() != Culoare_Curenta)) && (!TablaMea.TABLA[x, y + 1].GetIsOcupat() && !TablaMea.TABLA[x, y + 2].GetIsOcupat()) || (!TablaMea.TABLA[x + 1, y + 1].GetIsOcupat() && !TablaMea.TABLA[x + 1, y + 2].GetIsOcupat()))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x + 1, y + 3].SetIsLegal(true);
+                    else
+                        TablaMea.TABLA[x + 1, y + 3].SetisAtacat(true);
+                }
 
 
 

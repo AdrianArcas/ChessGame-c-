@@ -103,7 +103,7 @@ namespace Winform_Project
 
         private void Cal_Click(object sender, EventArgs e)
         {
-            Cal a = new(!Form1.Instance.Turn);
+            FertzCal a = new(!Form1.Instance.Turn);
             Form1.Instance.piesaPromo.SetPiesa(a);
             this.Close();
         }

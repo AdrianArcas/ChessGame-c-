@@ -25,9 +25,14 @@ namespace Winform_Project
         Image turan = Image.FromFile("TuraN.png");
         Image pionn = Image.FromFile("PionN.png");
         Image regen = Image.FromFile("RegeN.png");
+        //de modificat
+        Image snake_turan = Image.FromFile("WazirN.png");
 
+        Image wazir = Image.FromFile("Wazir.png");
+        Image wazirn = Image.FromFile("WazirN.png");
 
-
+        Image fertz = Image.FromFile("Fertz.png");
+        Image fertzn = Image.FromFile("FertzN.png");
 
         Image regina = Image.FromFile("Regina.png");
         Image nebun = Image.FromFile("Nebun.png");
@@ -307,8 +312,10 @@ namespace Winform_Project
                                 btnTabla[i, j].Image = pion;
                             if (Mytabla.TABLA[i, j].GetPiesa().Getnume() == "Tura")
                                 btnTabla[i, j].Image = tura;
-                            if (Mytabla.TABLA[i, j].GetPiesa().Getnume() == "Cal")
-                                btnTabla[i, j].Image = cal;
+                            if (Mytabla.TABLA[i, j].GetPiesa().Getnume() == "WazirCal")
+                                btnTabla[i, j].Image = wazir;
+                            if (Mytabla.TABLA[i, j].GetPiesa().Getnume() == "FertzCal")
+                                btnTabla[i, j].Image = fertz;
                             if (Mytabla.TABLA[i, j].GetPiesa().Getnume() == "Regina")
                                 btnTabla[i, j].Image = regina;
                             if (Mytabla.TABLA[i, j].GetPiesa().Getnume() == "Nebun")
@@ -330,8 +337,14 @@ namespace Winform_Project
                             if (Mytabla.TABLA[i, j].GetPiesa().Getnume() == "Tura")
                                 btnTabla[i, j].Image = turan;
 
-                            if (Mytabla.TABLA[i, j].GetPiesa().Getnume() == "Cal")
-                                btnTabla[i, j].Image = caln;
+                            if (Mytabla.TABLA[i, j].GetPiesa().Getnume() == "LoonySnakeTura")
+                                btnTabla[i, j].Image = snake_turan;
+
+                            if (Mytabla.TABLA[i, j].GetPiesa().Getnume() == "FertzCal")
+                                btnTabla[i, j].Image = fertzn;
+
+                            if (Mytabla.TABLA[i, j].GetPiesa().Getnume() == "WazirCal")
+                                btnTabla[i, j].Image = wazirn;
 
                             if (Mytabla.TABLA[i, j].GetPiesa().Getnume() == "Regina")
                                 btnTabla[i, j].Image = reginan;
@@ -339,10 +352,6 @@ namespace Winform_Project
                             if (Mytabla.TABLA[i, j].GetPiesa().Getnume() == "Nebun")
                                 btnTabla[i, j].Image = nebunn;
                         }
-                   
-
-
-
 
                     }
                     else btnTabla[i, j].Image = null;
