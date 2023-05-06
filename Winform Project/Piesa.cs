@@ -85,8 +85,8 @@ namespace Winform_Project
             else i = -1;
             //Verif daca casuta din fata dreapta a pionului este ocupata iar daca este verificam daca culoarea piesei curente este diferita de ea
 
-            if (!(y + 2 * i > 7 || y + 2 * i < 0))
-                if ((y == 6 || y == 1) && TablaMea.TABLA[x, y + i].GetIsOcupat() == false && TablaMea.TABLA[x, y + 2 * i].GetIsOcupat() == false)
+            if (!(y + 2 * i > Tabla.dimensiune - 1 || y + 2 * i < 0))
+                if ((y == Tabla.dimensiune-2 || y == 1) && TablaMea.TABLA[x, y + i].GetIsOcupat() == false && TablaMea.TABLA[x, y + 2 * i].GetIsOcupat() == false)
                 {
                     if (!f1)
                         TablaMea.TABLA[x, y + 2 * i].SetIsLegal(true);
@@ -96,7 +96,7 @@ namespace Winform_Project
                 }
 
 
-            if (!(x + 1 > 7 || x + 1 < 0 || y + i > 7 || y + i < 0))
+            if (!(x + 1 > Tabla.dimensiune - 1 || x + 1 < 0 || y + i > Tabla.dimensiune - 1 || y + i < 0))
                 if (TablaMea.TABLA[x + 1, y + i].GetIsOcupat() && TablaMea.TABLA[x + 1, y + i].GetPiesa().GetisAlb() != Culoare_Curenta)
                 {
                     if (!f1)
@@ -106,7 +106,7 @@ namespace Winform_Project
                 }
 
 
-            if (!(x - 1 > 7 || x - 1 < 0 || y + i > 7 || y + i < 0))
+            if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0 || y + i > Tabla.dimensiune - 1 || y + i < 0))
                 if (TablaMea.TABLA[x - 1, y + i].GetIsOcupat())
                     if (TablaMea.TABLA[x - 1, y + i].GetPiesa().GetisAlb() != Culoare_Curenta)
                     {
@@ -117,7 +117,7 @@ namespace Winform_Project
                     }
 
 
-            if (!(y + i > 7 || y + i < 0))
+            if (!(y + i > Tabla.dimensiune - 1 || y + i < 0))
                 if (!TablaMea.TABLA[x, y + i].GetIsOcupat())
                 {
                     if (!f1)
@@ -151,7 +151,7 @@ namespace Winform_Project
             Culoare_Curenta = TablaMea.TABLA[x, y].GetPiesa().GetisAlb();
 
 
-            if (!(x + 2 > 7 || x + 2 < 0 || y + 1 > 7 || y + 1 < 0))
+            if (!(x + 2 > Tabla.dimensiune - 1 || x + 2 < 0 || y + 1 > Tabla.dimensiune - 1 || y + 1 < 0))
                 if (!TablaMea.TABLA[x + 2, y + 1].GetIsOcupat() || (TablaMea.TABLA[x + 2, y + 1].GetIsOcupat() && TablaMea.TABLA[x + 2, y + 1].GetPiesa().GetisAlb() != Culoare_Curenta))
                 {
                     if (!f1)
@@ -160,7 +160,7 @@ namespace Winform_Project
                         TablaMea.TABLA[x + 2, y + 1].SetisAtacat(true);
                 }
 
-            if (!(x - 2 > 7 || x - 2 < 0 || y + 1 > 7 || y + 1 < 0))
+            if (!(x - 2 > Tabla.dimensiune - 1 || x - 2 < 0 || y + 1 > Tabla.dimensiune - 1 || y + 1 < 0))
                 if (!TablaMea.TABLA[x - 2, y + 1].GetIsOcupat() || (TablaMea.TABLA[x - 2, y + 1].GetIsOcupat() && TablaMea.TABLA[x - 2, y + 1].GetPiesa().GetisAlb() != Culoare_Curenta))
                 {
                     if (!f1)
@@ -169,7 +169,7 @@ namespace Winform_Project
                         TablaMea.TABLA[x - 2, y + 1].SetisAtacat(true);
                 }
 
-            if (!(x - 2 > 7 || x - 2 < 0 || y - 1 > 7 || y - 1 < 0))
+            if (!(x - 2 > Tabla.dimensiune - 1 || x - 2 < 0 || y - 1 > Tabla.dimensiune - 1 || y - 1 < 0))
                 if (!TablaMea.TABLA[x - 2, y - 1].GetIsOcupat() || (TablaMea.TABLA[x - 2, y - 1].GetIsOcupat() && TablaMea.TABLA[x - 2, y - 1].GetPiesa().GetisAlb() != Culoare_Curenta))
                 {
                     if (!f1)
@@ -178,7 +178,7 @@ namespace Winform_Project
                         TablaMea.TABLA[x - 2, y - 1].SetisAtacat(true);
                 }
 
-            if (!(x + 2 > 7 || x + 2 < 0 || y - 1 > 7 || y - 1 < 0))
+            if (!(x + 2 > Tabla.dimensiune - 1 || x + 2 < 0 || y - 1 > Tabla.dimensiune - 1 || y - 1 < 0))
                 if (!TablaMea.TABLA[x + 2, y - 1].GetIsOcupat() || (TablaMea.TABLA[x + 2, y - 1].GetIsOcupat() && TablaMea.TABLA[x + 2, y - 1].GetPiesa().GetisAlb() != Culoare_Curenta))
                 {
                     if (!f1)
@@ -187,7 +187,7 @@ namespace Winform_Project
                         TablaMea.TABLA[x + 2, y - 1].SetisAtacat(true);
                 }
 
-            if (!(x + 1 > 7 || x + 1 < 0 || y + 2 > 7 || y + 2 < 0))
+            if (!(x + 1 > Tabla.dimensiune - 1 || x + 1 < 0 || y + 2 > Tabla.dimensiune - 1 || y + 2 < 0))
 
                 if (!TablaMea.TABLA[x + 1, y + 2].GetIsOcupat() || (TablaMea.TABLA[x + 1, y + 2].GetIsOcupat() && TablaMea.TABLA[x + 1, y + 2].GetPiesa().GetisAlb() != Culoare_Curenta))
                 {
@@ -197,7 +197,7 @@ namespace Winform_Project
                         TablaMea.TABLA[x + 1, y + 2].SetisAtacat(true);
                 }
 
-            if (!(x - 1 > 7 || x - 1 < 0 || y + 2 > 7 || y + 2 < 0))
+            if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0 || y + 2 > Tabla.dimensiune - 1 || y + 2 < 0))
                 if (!TablaMea.TABLA[x - 1, y + 2].GetIsOcupat() || (TablaMea.TABLA[x - 1, y + 2].GetIsOcupat() && TablaMea.TABLA[x - 1, y + 2].GetPiesa().GetisAlb() != Culoare_Curenta))
                 {
                     if (!f1)
@@ -206,7 +206,7 @@ namespace Winform_Project
                         TablaMea.TABLA[x - 1, y + 2].SetisAtacat(true);
                 }
 
-            if (!(x - 1 > 7 || x - 1 < 0 || y - 2 > 7 || y - 2 < 0))
+            if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0 || y - 2 > Tabla.dimensiune - 1 || y - 2 < 0))
                 if (!TablaMea.TABLA[x - 1, y - 2].GetIsOcupat() || (TablaMea.TABLA[x - 1, y - 2].GetIsOcupat() && TablaMea.TABLA[x - 1, y - 2].GetPiesa().GetisAlb() != Culoare_Curenta))
                 {
                     if (!f1)
@@ -215,7 +215,7 @@ namespace Winform_Project
                         TablaMea.TABLA[x - 1, y - 2].SetisAtacat(true);
                 }
 
-            if (!(x + 1 > 7 || x + 1 < 0 || y - 2 > 7 || y - 2 < 0))
+            if (!(x + 1 > Tabla.dimensiune - 1 || x + 1 < 0 || y - 2 > Tabla.dimensiune - 1 || y - 2 < 0))
                 if (!TablaMea.TABLA[x + 1, y - 2].GetIsOcupat() || (TablaMea.TABLA[x + 1, y - 2].GetIsOcupat() && TablaMea.TABLA[x + 1, y - 2].GetPiesa().GetisAlb() != Culoare_Curenta))
                 {
 
@@ -247,9 +247,9 @@ namespace Winform_Project
             Culoare_Curenta = TablaMea.TABLA[x, y].GetPiesa().GetisAlb();
 
 
-            for (int i = 1; i < 8; i++)
+            for (int i = 1; i < Tabla.dimensiune; i++)
             {
-                if (!(x + i > 7 || x + i < 0 || y + i > 7 || y + i < 0))
+                if (!(x + i > Tabla.dimensiune - 1 || x + i < 0 || y + i > Tabla.dimensiune - 1 || y + i < 0))
                 {
                     if (!TablaMea.TABLA[x + i, y + i].GetIsOcupat())
                     {
@@ -277,9 +277,9 @@ namespace Winform_Project
 
             /////////////////
 
-            for (int i = 1; i < 8; i++)
+            for (int i = 1; i < Tabla.dimensiune; i++)
             {
-                if (!(x - i > 7 || x - i < 0 || y - i > 7 || y - i < 0))
+                if (!(x - i > Tabla.dimensiune - 1 || x - i < 0 || y - i > Tabla.dimensiune - 1 || y - i < 0))
                 {
                     if (!TablaMea.TABLA[x - i, y - i].GetIsOcupat())
                     {
@@ -305,9 +305,9 @@ namespace Winform_Project
 
             ///////////////////
 
-            for (int i = 1; i < 8; i++)
+            for (int i = 1; i < Tabla.dimensiune; i++)
             {
-                if (!(x - i > 7 || x - i < 0 || y + i > 7 || y + i < 0))
+                if (!(x - i > Tabla.dimensiune - 1 || x - i < 0 || y + i > Tabla.dimensiune - 1 || y + i < 0))
                 {
                     if (!TablaMea.TABLA[x - i, y + i].GetIsOcupat())
                     {
@@ -331,9 +331,9 @@ namespace Winform_Project
 
             /////////////////////
 
-            for (int i = 1; i < 8; i++)
+            for (int i = 1; i < Tabla.dimensiune; i++)
             {
-                if (!(x + i > 7 || x + i < 0 || y - i > 7 || y - i < 0))
+                if (!(x + i > Tabla.dimensiune - 1 || x + i < 0 || y - i > Tabla.dimensiune - 1 || y - i < 0))
                 {
                     if (!TablaMea.TABLA[x + i, y - i].GetIsOcupat())
                     {
@@ -361,9 +361,9 @@ namespace Winform_Project
             /////////////////////////////////
 
 
-            for (int i = 1; i < 8; i++)
+            for (int i = 1; i < Tabla.dimensiune; i++)
             {
-                if (!(x + i > 7 || x + i < 0))
+                if (!(x + i > Tabla.dimensiune - 1 || x + i < 0))
                 {
                     if (!TablaMea.TABLA[x + i, y].GetIsOcupat())
                     {
@@ -386,9 +386,9 @@ namespace Winform_Project
                 else break;
             }
             ////////////
-            for (int i = 1; i < 8; i++)
+            for (int i = 1; i < Tabla.dimensiune; i++)
             {
-                if (!(x - i > 7 || x - i < 0))
+                if (!(x - i > Tabla.dimensiune - 1 || x - i < 0))
                 {
                     if (!TablaMea.TABLA[x - i, y].GetIsOcupat())
                     {
@@ -411,9 +411,9 @@ namespace Winform_Project
                 else break;
             }
             ///////////////////
-            for (int i = 1; i < 8; i++)
+            for (int i = 1; i < Tabla.dimensiune; i++)
             {
-                if (!(y + i > 7 || y + i < 0))
+                if (!(y + i > Tabla.dimensiune - 1 || y + i < 0))
                 {
                     if (!TablaMea.TABLA[x, y + i].GetIsOcupat())
                     {
@@ -437,9 +437,9 @@ namespace Winform_Project
             }
             /////////////////////
 
-            for (int i = 1; i < 8; i++)
+            for (int i = 1; i < Tabla.dimensiune; i++)
             {
-                if (!(y - i > 7 || y - i < 0))
+                if (!(y - i > Tabla.dimensiune - 1 || y - i < 0))
                 {
                     if (!TablaMea.TABLA[x, y - i].GetIsOcupat())
                     {
@@ -481,9 +481,9 @@ namespace Winform_Project
 
             Culoare_Curenta = TablaMea.TABLA[x, y].GetPiesa().GetisAlb();
 
-            for (int i = 1; i < 8; i++)
+            for (int i = 1; i < Tabla.dimensiune; i++)
             {
-                if (!(x + i > 7 || x + i < 0 || y + i > 7 || y + i < 0))
+                if (!(x + i > Tabla.dimensiune - 1 || x + i < 0 || y + i > Tabla.dimensiune - 1 || y + i < 0))
                 {
                     if (!TablaMea.TABLA[x + i, y + i].GetIsOcupat())
                     {
@@ -511,9 +511,9 @@ namespace Winform_Project
 
             /////////////////
 
-            for (int i = 1; i < 8; i++)
+            for (int i = 1; i < Tabla.dimensiune; i++)
             {
-                if (!(x - i > 7 || x - i < 0 || y - i > 7 || y - i < 0))
+                if (!(x - i > Tabla.dimensiune - 1 || x - i < 0 || y - i > Tabla.dimensiune - 1 || y - i < 0))
                 {
                     if (!TablaMea.TABLA[x - i, y - i].GetIsOcupat())
                     {
@@ -539,9 +539,9 @@ namespace Winform_Project
 
             ///////////////////
 
-            for (int i = 1; i < 8; i++)
+            for (int i = 1; i < Tabla.dimensiune; i++)
             {
-                if (!(x - i > 7 || x - i < 0 || y + i > 7 || y + i < 0))
+                if (!(x - i > Tabla.dimensiune - 1 || x - i < 0 || y + i > Tabla.dimensiune - 1 || y + i < 0))
                 {
                     if (!TablaMea.TABLA[x - i, y + i].GetIsOcupat())
                     {
@@ -565,9 +565,9 @@ namespace Winform_Project
 
             /////////////////////
 
-            for (int i = 1; i < 8; i++)
+            for (int i = 1; i < Tabla.dimensiune; i++)
             {
-                if (!(x + i > 7 || x + i < 0 || y - i > 7 || y - i < 0))
+                if (!(x + i > Tabla.dimensiune - 1 || x + i < 0 || y - i > Tabla.dimensiune - 1 || y - i < 0))
                 {
                     if (!TablaMea.TABLA[x + i, y - i].GetIsOcupat())
                     {
@@ -617,9 +617,9 @@ namespace Winform_Project
 
             Culoare_Curenta = TablaMea.TABLA[x, y].GetPiesa().GetisAlb();
 
-            for (int i = 1; i < 8; i++)
+            for (int i = 1; i < Tabla.dimensiune; i++)
             {
-                if (!(x + i > 7 || x + i < 0))
+                if (!(x + i > Tabla.dimensiune - 1 || x + i < 0))
                 {
                     if (!TablaMea.TABLA[x + i, y].GetIsOcupat())
                     {
@@ -643,9 +643,9 @@ namespace Winform_Project
                 else break;
             }
             ////////////
-            for (int i = 1; i < 8; i++)
+            for (int i = 1; i < Tabla.dimensiune; i++)
             {
-                if (!(x - i > 7 || x - i < 0))
+                if (!(x - i > Tabla.dimensiune - 1 || x - i < 0))
                 {
                     if (!TablaMea.TABLA[x - i, y].GetIsOcupat())
                     {
@@ -668,9 +668,9 @@ namespace Winform_Project
                 else break;
             }
             ///////////////////
-            for (int i = 1; i < 8; i++)
+            for (int i = 1; i < Tabla.dimensiune; i++)
             {
-                if (!(y + i > 7 || y + i < 0))
+                if (!(y + i > Tabla.dimensiune - 1 || y + i < 0))
                 {
                     if (!TablaMea.TABLA[x, y + i].GetIsOcupat())
                     {
@@ -694,9 +694,9 @@ namespace Winform_Project
             }
             /////////////////////
 
-            for (int i = 1; i < 8; i++)
+            for (int i = 1; i < Tabla.dimensiune; i++)
             {
-                if (!(y - i > 7 || y - i < 0))
+                if (!(y - i > Tabla.dimensiune - 1 || y - i < 0))
                 {
                     if (!TablaMea.TABLA[x, y - i].GetIsOcupat())
                     {
@@ -747,7 +747,7 @@ namespace Winform_Project
             Culoare_Curenta = TablaMea.TABLA[x, y].GetPiesa().GetisAlb();
 
 
-            if (!(x + 1 > 7 || x + 1 < 0 || y + 1 > 7 || y + 1 < 0))
+            if (!(x + 1 > Tabla.dimensiune - 1 || x + 1 < 0 || y + 1 > Tabla.dimensiune - 1 || y + 1 < 0))
                 if (!TablaMea.TABLA[x + 1, y + 1].GetIsOcupat() || (TablaMea.TABLA[x + 1, y + 1].GetIsOcupat() && TablaMea.TABLA[x + 1, y + 1].GetPiesa().GetisAlb() != Culoare_Curenta))
                 {
                     if (!f1)
@@ -756,7 +756,7 @@ namespace Winform_Project
                 }
 
 
-            if (!(x + 1 > 7 || x + 1 < 0))
+            if (!(x + 1 > Tabla.dimensiune - 1 || x + 1 < 0))
                 if (!TablaMea.TABLA[x + 1, y].GetIsOcupat() || (TablaMea.TABLA[x + 1, y].GetIsOcupat() && TablaMea.TABLA[x + 1, y].GetPiesa().GetisAlb() != Culoare_Curenta))
                 {
                     if (!f1)
@@ -767,7 +767,7 @@ namespace Winform_Project
 
 
 
-            if (!(x - 1 > 7 || x - 1 < 0))
+            if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0))
                 if (!TablaMea.TABLA[x - 1, y].GetIsOcupat() || (TablaMea.TABLA[x - 1, y].GetIsOcupat() && TablaMea.TABLA[x - 1, y].GetPiesa().GetisAlb() != Culoare_Curenta))
                 {
                     if (!f1)
@@ -776,7 +776,7 @@ namespace Winform_Project
                 }
 
 
-            if (!(y + 1 > 7 || y + 1 < 0))
+            if (!(y + 1 > Tabla.dimensiune - 1 || y + 1 < 0))
                 if (!TablaMea.TABLA[x, y + 1].GetIsOcupat() || (TablaMea.TABLA[x, y + 1].GetIsOcupat() && TablaMea.TABLA[x, y + 1].GetPiesa().GetisAlb() != Culoare_Curenta))
                 {
                     if (!f1)
@@ -787,7 +787,7 @@ namespace Winform_Project
 
 
 
-            if (!(y - 1 > 7 || y - 1 < 0))
+            if (!(y - 1 > Tabla.dimensiune - 1 || y - 1 < 0))
                 if (!TablaMea.TABLA[x, y - 1].GetIsOcupat() || (TablaMea.TABLA[x, y - 1].GetIsOcupat() && TablaMea.TABLA[x, y - 1].GetPiesa().GetisAlb() != Culoare_Curenta))
                 {
                     if (!f1)
@@ -797,7 +797,7 @@ namespace Winform_Project
 
 
 
-            if (!(x + 1 > 7 || x + 1 < 0 || y - 1 > 7 || y - 1 < 0))
+            if (!(x + 1 > Tabla.dimensiune - 1 || x + 1 < 0 || y - 1 > Tabla.dimensiune - 1 || y - 1 < 0))
                 if (!TablaMea.TABLA[x + 1, y - 1].GetIsOcupat() || (TablaMea.TABLA[x + 1, y - 1].GetIsOcupat() && TablaMea.TABLA[x + 1, y - 1].GetPiesa().GetisAlb() != Culoare_Curenta))
                 {
                     if (!f1)
@@ -807,7 +807,7 @@ namespace Winform_Project
 
 
 
-            if (!(x - 1 > 7 || x - 1 < 0 || y + 1 > 7 || y + 1 < 0))
+            if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0 || y + 1 > Tabla.dimensiune - 1 || y + 1 < 0))
                 if (!TablaMea.TABLA[x - 1, y + 1].GetIsOcupat() || (TablaMea.TABLA[x - 1, y + 1].GetIsOcupat() && TablaMea.TABLA[x - 1, y + 1].GetPiesa().GetisAlb() != Culoare_Curenta))
                 {
                     if (!f1)
@@ -819,7 +819,7 @@ namespace Winform_Project
 
 
 
-            if (!(x - 1 > 7 || x - 1 < 0 || y - 1 > 7 || y - 1 < 0))
+            if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0 || y - 1 > Tabla.dimensiune - 1 || y - 1 < 0))
                 if (!TablaMea.TABLA[x - 1, y - 1].GetIsOcupat() || (TablaMea.TABLA[x - 1, y - 1].GetIsOcupat() && TablaMea.TABLA[x - 1, y - 1].GetPiesa().GetisAlb() != Culoare_Curenta))
                 {
                     if (!f1)

@@ -12,10 +12,10 @@ namespace Winform_Project
 {
     public partial class Form1 : Form
     {
-
+        
         public static Form1 Instance;
         public Tabla Mytabla = new Tabla(); //cream o tabla cu celule de forma casuta
-        public Button[,] btnTabla = new Button[8, 8];//matrice de butoane
+        public Button[,] btnTabla = new Button[Tabla.dimensiune, Tabla.dimensiune];//matrice de butoane
         public Casuta piesaPromo = new();
 
 
@@ -56,12 +56,12 @@ namespace Winform_Project
         private void PrintareButoane()
         {
 
-            int buttonSize = panel1.Width / 8;//dimensiune butoane
+            int buttonSize = panel1.Width / Tabla.dimensiune;//dimensiune butoane
             panel1.Width = panel1.Height;
 
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < Tabla.dimensiune; i++)
             {
-                for (int j = 0; j < 8; j++)
+                for (int j = 0; j < Tabla.dimensiune; j++)
                 {
                     btnTabla[i, j] = new Button();
                     btnTabla[i, j].Height = buttonSize;
@@ -256,7 +256,7 @@ namespace Winform_Project
 
 
                 //Conditie promovare pion
-                if (Mytabla.TABLA[x, y].GetPiesa().Getnume() == "Pion" && (y == 7 && !Mytabla.TABLA[x, y].GetPiesa().GetisAlb() || y == 0 && Mytabla.TABLA[x, y].GetPiesa().GetisAlb()))
+                if (Mytabla.TABLA[x, y].GetPiesa().Getnume() == "Pion" && (y == Tabla.dimensiune-1 && !Mytabla.TABLA[x, y].GetPiesa().GetisAlb() || y == 0 && Mytabla.TABLA[x, y].GetPiesa().GetisAlb()))
                 {
 
 
@@ -283,9 +283,9 @@ namespace Winform_Project
 
         public void Coloreaza(Button[,] btnTabla, Tabla Mytabla)
         {
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < Tabla.dimensiune; i++)
             {
-                for (int j = 0; j < 8; j++)
+                for (int j = 0; j < Tabla.dimensiune; j++)
                 {
                     if ((j + i) % 2 == 0)
                         btnTabla[i, j].BackColor = Color.BurlyWood;
@@ -350,14 +350,9 @@ namespace Winform_Project
             }
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
-
-
-
-
-
-
-
-
+        }
     }
 }

@@ -115,12 +115,9 @@ namespace Winform_Project
             this.Close();
         }
 
+        private void Form2_Load(object sender, EventArgs e)
+        {
 
-
-
-
-
-
-
+        }
     }
 }

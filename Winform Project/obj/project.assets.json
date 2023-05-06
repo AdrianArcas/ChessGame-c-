@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\adria\\source\\repos\\Winform Project\\ChessGame-c-\\Winform Project\\Winform Project.csproj",
+      "projectUniqueName": "D:\\ChessGame-c-\\Winform Project\\Winform Project.csproj",
       "projectName": "Winform Project",
-      "projectPath": "C:\\Users\\adria\\source\\repos\\Winform Project\\ChessGame-c-\\Winform Project\\Winform Project.csproj",
+      "projectPath": "D:\\ChessGame-c-\\Winform Project\\Winform Project.csproj",
       "packagesPath": "C:\\Users\\adria\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\adria\\source\\repos\\Winform Project\\ChessGame-c-\\Winform Project\\obj\\",
+      "outputPath": "D:\\ChessGame-c-\\Winform Project\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\adria\\AppData\\Roaming\\NuGet\\NuGet.Config",

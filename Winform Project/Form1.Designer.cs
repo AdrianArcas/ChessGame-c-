@@ -36,19 +36,21 @@ namespace Winform_Project
             // 
             this.panel1.AutoSize = true;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(10);
+            this.panel1.Margin = new System.Windows.Forms.Padding(11, 13, 11, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 800);
+            this.panel1.Size = new System.Drawing.Size(914, 1067);
             this.panel1.TabIndex = 0;
             this.panel1.BackColorChanged += new System.EventHandler(this.Form1_Load);
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(834, 811);
+            this.ClientSize = new System.Drawing.Size(953, 1055);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
