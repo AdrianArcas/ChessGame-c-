@@ -287,7 +287,7 @@ namespace Winform_Project
             {
                 for (int j = 0; j < Tabla.dimensiune; j++)
                 {
-                    if ((j + i) % 2 == 0)
+                    if ((j + i) % 2 == 1)
                         btnTabla[i, j].BackColor = Color.BurlyWood;
                     else
                         btnTabla[i, j].BackColor = Color.White;

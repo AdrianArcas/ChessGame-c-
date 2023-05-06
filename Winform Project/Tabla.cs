@@ -65,12 +65,12 @@ namespace Winform_Project
             }
             TABLA[1, 9].SetPiesa(new Cal(true));
             TABLA[1, 9].SetIsOcupat(true);
-            TABLA[6, 9].SetPiesa(new Cal(true));
-            TABLA[6, 9].SetIsOcupat(true);
+            TABLA[8, 9].SetPiesa(new Cal(true));
+            TABLA[8, 9].SetIsOcupat(true);
             TABLA[1, 0].SetPiesa(new Cal(false));
             TABLA[1, 0].SetIsOcupat(true);
-            TABLA[6, 0].SetPiesa(new Cal(false));
-            TABLA[6, 0].SetIsOcupat(true);
+            TABLA[8, 0].SetPiesa(new Cal(false));
+            TABLA[8, 0].SetIsOcupat(true);
 
             TABLA[0, 9].SetPiesa(new Tura(true));
             TABLA[0, 9].SetIsOcupat(true);
@@ -80,23 +80,27 @@ namespace Winform_Project
             TABLA[0, 0].SetIsOcupat(true);
             TABLA[9, 0].SetPiesa(new Tura(false));
             TABLA[9, 0].SetIsOcupat(true);
+
+
             TABLA[2, 9].SetPiesa(new Nebun(true));
             TABLA[2, 9].SetIsOcupat(true);
-            TABLA[5, 9].SetPiesa(new Nebun(true));
-            TABLA[5, 9].SetIsOcupat(true);
+            TABLA[7, 9].SetPiesa(new Nebun(true));
+            TABLA[7, 9].SetIsOcupat(true);
             TABLA[2, 0].SetPiesa(new Nebun(false));
             TABLA[2, 0].SetIsOcupat(true);
-            TABLA[5, 0].SetPiesa(new Nebun(false));
-            TABLA[5, 0].SetIsOcupat(true);
+            TABLA[7, 0].SetPiesa(new Nebun(false));
+            TABLA[7, 0].SetIsOcupat(true);
 
-            TABLA[3, 9].SetPiesa(new Regina(true));
-            TABLA[3, 9].SetIsOcupat(true);
-            TABLA[3, 0].SetPiesa(new Regina(false));
-            TABLA[3, 0].SetIsOcupat(true);
-            TABLA[4, 9].SetPiesa(new Rege(true));
+            TABLA[4, 9].SetPiesa(new Regina(true));
             TABLA[4, 9].SetIsOcupat(true);
-            TABLA[4, 0].SetPiesa(new Rege(false));
+            TABLA[4, 0].SetPiesa(new Regina(false));
             TABLA[4, 0].SetIsOcupat(true);
+
+            TABLA[5, 9].SetPiesa(new Rege(true));
+            TABLA[5, 9].SetIsOcupat(true);
+
+            TABLA[5, 0].SetPiesa(new Rege(false));
+            TABLA[5, 0].SetIsOcupat(true);
 
         }
 
