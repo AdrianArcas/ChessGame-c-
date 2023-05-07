@@ -81,8 +81,17 @@ namespace Winform_Project
             TABLA[9, 0].SetPiesa(new Tura(false));
             TABLA[9, 0].SetIsOcupat(true);
 
-            TABLA[5, 5].SetPiesa(new LoonySnakeTura(false));
-            TABLA[5, 5].SetIsOcupat(true);
+            TABLA[6, 0].SetPiesa(new LoonySnakeTura(false));
+            TABLA[6, 0].SetIsOcupat(true);
+
+            TABLA[6, 9].SetPiesa(new LoonySnakeTura(true));
+            TABLA[6, 9].SetIsOcupat(true);
+
+            TABLA[3, 0].SetPiesa(new InsaneNebun(false));
+            TABLA[3, 0].SetIsOcupat(true);
+
+            TABLA[3, 9].SetPiesa(new InsaneNebun(true));
+            TABLA[3, 9].SetIsOcupat(true);
 
             TABLA[2, 9].SetPiesa(new Nebun(true));
             TABLA[2, 9].SetIsOcupat(true);

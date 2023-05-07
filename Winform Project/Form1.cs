@@ -324,6 +324,8 @@ namespace Winform_Project
                                 btnTabla[i, j].Image = regina;
                             if (Mytabla.TABLA[i, j].GetPiesa().Getnume() == "Nebun")
                                 btnTabla[i, j].Image = nebun;
+                            if (Mytabla.TABLA[i, j].GetPiesa().Getnume() == "InsaneNebun")
+                                btnTabla[i, j].Image = insane_nebun;
                             if (Mytabla.TABLA[i, j].GetPiesa().Getnume() == "LoonySnakeTura")
                                 btnTabla[i, j].Image = snake_tura;
                             }
@@ -355,6 +357,8 @@ namespace Winform_Project
 
                             if (Mytabla.TABLA[i, j].GetPiesa().Getnume() == "Nebun")
                                 btnTabla[i, j].Image = nebunn;
+                            if (Mytabla.TABLA[i, j].GetPiesa().Getnume() == "InsaneNebun")
+                                btnTabla[i, j].Image = insane_nebunn;
                         }
 
                     }
