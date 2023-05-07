@@ -26,7 +26,11 @@ namespace Winform_Project
         Image pionn = Image.FromFile("PionN.png");
         Image regen = Image.FromFile("RegeN.png");
         //de modificat
-        Image snake_turan = Image.FromFile("WazirN.png");
+        Image snake_turan = Image.FromFile("LoonyTuraN.png");
+        Image snake_tura = Image.FromFile("LoonyTura.png");
+
+        Image insane_nebun = Image.FromFile("InsaneNebun.png");
+        Image insane_nebunn = Image.FromFile("InsaneNebunN.png");
 
         Image wazir = Image.FromFile("Wazir.png");
         Image wazirn = Image.FromFile("WazirN.png");
@@ -320,9 +324,9 @@ namespace Winform_Project
                                 btnTabla[i, j].Image = regina;
                             if (Mytabla.TABLA[i, j].GetPiesa().Getnume() == "Nebun")
                                 btnTabla[i, j].Image = nebun;
-
-
-                        }
+                            if (Mytabla.TABLA[i, j].GetPiesa().Getnume() == "LoonySnakeTura")
+                                btnTabla[i, j].Image = snake_tura;
+                            }
 
                         else
                         {
