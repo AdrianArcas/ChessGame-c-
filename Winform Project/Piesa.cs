@@ -1147,7 +1147,7 @@ namespace Winform_Project
                         TablaMea.TABLA[x - 1, y - 3].SetisAtacat(true);
                 }
 
-            if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0 || y - 3 > Tabla.dimensiune - 1 || y - 3 < 0))
+            if (!(x + 1 > Tabla.dimensiune - 1 || x + 1 < 0 || y - 3 > Tabla.dimensiune - 1 || y - 3 < 0))
                 if ((!TablaMea.TABLA[x + 1, y - 3].GetIsOcupat() || (TablaMea.TABLA[x + 1, y - 3].GetIsOcupat() && TablaMea.TABLA[x + 1, y - 3].GetPiesa().GetisAlb() != Culoare_Curenta)) && (!TablaMea.TABLA[x, y - 1].GetIsOcupat() && !TablaMea.TABLA[x, y - 2].GetIsOcupat()) || (!TablaMea.TABLA[x + 1, y - 1].GetIsOcupat() && !TablaMea.TABLA[x + 1, y - 2].GetIsOcupat()))
                 {
                     if (!f1)
@@ -1156,7 +1156,6 @@ namespace Winform_Project
                         TablaMea.TABLA[x + 1, y - 3].SetisAtacat(true);
                 }
 
-            //////
             if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0 || y + 3 > Tabla.dimensiune - 1 || y + 3 < 0))
                 if ((!TablaMea.TABLA[x - 1, y + 3].GetIsOcupat() || (TablaMea.TABLA[x - 1, y + 3].GetIsOcupat() && TablaMea.TABLA[x - 1, y + 3].GetPiesa().GetisAlb() != Culoare_Curenta)) && (!TablaMea.TABLA[x, y + 1].GetIsOcupat() && !TablaMea.TABLA[x, y + 2].GetIsOcupat()) || (!TablaMea.TABLA[x - 1, y + 1].GetIsOcupat() && !TablaMea.TABLA[x - 1, y + 2].GetIsOcupat()))
                 {
@@ -1166,7 +1165,7 @@ namespace Winform_Project
                         TablaMea.TABLA[x - 1, y + 3].SetisAtacat(true);
                 }
 
-            if (!(x - 1 > Tabla.dimensiune - 1 || x - 1 < 0 || y + 3 > Tabla.dimensiune - 1 || y + 3 < 0))
+            if (!(x + 1 > Tabla.dimensiune - 1 || x + 1 < 0 || y + 3 > Tabla.dimensiune - 1 || y + 3 < 0))
                 if ((!TablaMea.TABLA[x + 1, y + 3].GetIsOcupat() || (TablaMea.TABLA[x + 1, y + 3].GetIsOcupat() && TablaMea.TABLA[x + 1, y + 3].GetPiesa().GetisAlb() != Culoare_Curenta)) && (!TablaMea.TABLA[x, y + 1].GetIsOcupat() && !TablaMea.TABLA[x, y + 2].GetIsOcupat()) || (!TablaMea.TABLA[x + 1, y + 1].GetIsOcupat() && !TablaMea.TABLA[x + 1, y + 2].GetIsOcupat()))
                 {
                     if (!f1)
@@ -1175,8 +1174,15 @@ namespace Winform_Project
                         TablaMea.TABLA[x + 1, y + 3].SetisAtacat(true);
                 }
 
-
-
+            //////////////////////////////
+            if (!(y - 1 > Tabla.dimensiune - 1 || y - 1 < 0 || x - 3 > Tabla.dimensiune - 1 || x - 3 < 0))
+                if ((!TablaMea.TABLA[x - 3, y - 1].GetIsOcupat() || (TablaMea.TABLA[x - 3, y - 1].GetIsOcupat() && TablaMea.TABLA[x - 3, y - 1].GetPiesa().GetisAlb() != Culoare_Curenta)) && (!TablaMea.TABLA[x - 1, y].GetIsOcupat() && !TablaMea.TABLA[x - 2, y].GetIsOcupat()) || (!TablaMea.TABLA[x - 1, y - 1].GetIsOcupat() && !TablaMea.TABLA[x - 2, y - 1].GetIsOcupat()))
+                {
+                    if (!f1)
+                        TablaMea.TABLA[x - 3, y - 1].SetIsLegal(true);
+                    else
+                        TablaMea.TABLA[x - 3, y - 1].SetisAtacat(true);
+                }
         }
     }
 
