@@ -12,11 +12,12 @@ namespace Winform_Project
 {
     public partial class Form1 : Form
     {
-        
+        public AI AI = new AI();
         public static Form1 Instance;
         public Tabla Mytabla = new Tabla(); //cream o tabla cu celule de forma casuta
         public Button[,] btnTabla = new Button[Tabla.dimensiune, Tabla.dimensiune];//matrice de butoane
         public Casuta piesaPromo = new();
+        public bool NinjaPressed = false;
 
 
         Image reginan = Image.FromFile("ReginaN.png");
@@ -96,10 +97,11 @@ namespace Winform_Project
                 }
 
             }
+
             Coloreaza(btnTabla, Mytabla);
-
+            
         }
-
+       
         private void EventClick(object sender, EventArgs e)
         {
 
@@ -111,6 +113,11 @@ namespace Winform_Project
             Piesa PiesaCurenta = Casutacurenta.GetPiesa();
 
 
+            if (Turn == false) {
+                MessageBox.Show(AI.CalculatePoint(Mytabla, Turn).ToString());
+                //miscarea Ai
+                Turn = !Turn;
+            }
 
 
             //Cazul 1: Dam click be o casuta care nu are nicio piesa si nu e miscare legala
@@ -129,7 +136,7 @@ namespace Winform_Project
             if (Casutacurenta.GetIsOcupat() == true && Casutacurenta.GetIsLegal() == false)
             {
 
-                if (PiesaCurenta.GetisAlb() == Turn)
+                if (PiesaCurenta.GetisAlb() == true && Turn == true)
                 {
 
                     Mytabla.CuratareisLegal();
@@ -178,7 +185,7 @@ namespace Winform_Project
 
                 //Cazul 3:  Dam click pe o casuta care este miscare legala(ulterior am dat click pe o piesa)
 
-                if (Casutacurenta.GetIsLegal() == true)
+                if (Casutacurenta.GetIsLegal() == true && Mytabla.TABLA[xAnte, yAnte].GetPiesa() != null)
             {
 
                 if (Mytabla.TABLA[xAnte, yAnte].GetPiesa().Getnume() == "Rege")
@@ -265,7 +272,7 @@ namespace Winform_Project
 
 
                 //Conditie promovare pion
-                if (Mytabla.TABLA[x, y].GetPiesa().Getnume() == "Pion" && (y == Tabla.dimensiune-1 && !Mytabla.TABLA[x, y].GetPiesa().GetisAlb() || y == 0 && Mytabla.TABLA[x, y].GetPiesa().GetisAlb()))
+                if (Mytabla.TABLA[x, y].GetPiesa().Getnume() == "Pion" && (y == Tabla.dimensiune - 1 && !Mytabla.TABLA[x, y].GetPiesa().GetisAlb() || y == 0 && Mytabla.TABLA[x, y].GetPiesa().GetisAlb()))
                 {
 
 
@@ -301,7 +308,7 @@ namespace Winform_Project
                     else
                         btnTabla[i, j].BackColor = Color.White;
 
-                  
+
                     if (Mytabla.TABLA[i, j].GetIsLegal() == true)
                         btnTabla[i, j].BackColor = Color.Green;
 
@@ -328,7 +335,7 @@ namespace Winform_Project
                                 btnTabla[i, j].Image = insane_nebun;
                             if (Mytabla.TABLA[i, j].GetPiesa().Getnume() == "LoonySnakeTura")
                                 btnTabla[i, j].Image = snake_tura;
-                            }
+                        }
 
                         else
                         {
@@ -371,5 +378,26 @@ namespace Winform_Project
         {
 
         }
+
+        /*private void Ninja_Click(object sender, EventArgs e)
+        {
+            Piesa PiesaCurenta = new PionNinja(Turn);
+            PionNinja.MiscareLegalaPlasare(Mytabla,Turn);
+
+            for (int i = 0; i < Tabla.dimensiune; i++)
+            {
+                for (int j = 0; j < Tabla.dimensiune; j++)
+                {
+                    if ((j + i) % 2 == 1)
+                        btnTabla[i, j].BackColor = Color.BurlyWood;
+                    else
+                        btnTabla[i, j].BackColor = Color.White;
+
+
+                    if (Mytabla.TABLA[i, j].GetIsLegal() == true)
+                        btnTabla[i, j].BackColor = Color.Green;
+                }
+            }
+        }*/
     }
 }

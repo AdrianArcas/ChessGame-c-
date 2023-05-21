@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Winform_Project
 {
-    public class Tabla
+    public class Tabla : ICloneable
+
     {
         public Casuta[,] TABLA;
         public static int dimensiune = 10;
@@ -207,9 +205,107 @@ namespace Winform_Project
             return true;
         }
 
+        public Dictionary<Pozitie, List<Pozitie>> getAllLegalMoves(bool turn)
+        {
+            Dictionary<Pozitie, List<Pozitie>> miscariLegale = new Dictionary<Pozitie, List<Pozitie>>();
 
+            for (int i = 0; i < dimensiune; i++)
+            {
+                for (int j = 0; j < dimensiune; j++)
+                {
+                    if (TABLA[i, j].GetIsOcupat() == true && TABLA[i, j].GetPiesa().GetisAlb() == turn)
+                    {
+
+                        TABLA[i, j].GetPiesa().MiscareLegala(i, j, this);
+
+                        List<Pozitie> listaPozitii = new List<Pozitie>();
+
+                        for (int k = 0; k < dimensiune; k++)
+                        {
+                            for (int l = 0; l < dimensiune; l++)
+                            {
+                                if (TABLA[k, l].GetIsLegal() == true)
+                                {
+                                    listaPozitii.Add(new Pozitie(k, l));
+
+                                }
+                            }
+                        }
+                        miscariLegale.Add(new Pozitie(i, j), listaPozitii);
+                        this.CuratareisLegal();
+                    }
+                }
+
+
+            }
+
+            return miscariLegale;
+
+        }
+
+        public int GetScoreFromExistingPieces(bool turn)
+        {
+            int pawnValue = 100;
+            int knightValue = 320;
+            int bishopValue = 330;
+            int rookValue = 500;
+            int queenValue = 900;
+            int kingValue = 20000;
+            int material = 0;
+
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    if (TABLA[i, j].GetPiesa() != null)
+                    {
+                        if (TABLA[i, j].GetPiesa().GetType() == typeof(Pion) && TABLA[i, j].GetPiesa().GetisAlb() == turn)
+                        {
+                            material += (pawnValue); // plus "+ bestPawnPositions[i]" if you want, but it doesn't work well
+                        }
+                        if (TABLA[i, j].GetPiesa().GetType() == typeof(WazirCal) && TABLA[i, j].GetPiesa().GetisAlb() == turn)
+                        {
+                            material += (knightValue); // plus "+ bestKnightPositions[i]" if you want, but it doesn't work well
+                        }
+                        if (TABLA[i, j].GetPiesa().GetType() == typeof(Nebun) && TABLA[i, j].GetPiesa().GetisAlb() == turn)
+                        {
+                            material += (bishopValue); // plus "+ bestBishopPositions[i]" if you want, but it doesn't work well
+                        }
+                        if (TABLA[i, j].GetPiesa().GetType() == typeof(Tura) && TABLA[i, j].GetPiesa().GetisAlb() == turn)
+                        {
+                            material += (rookValue); // plus "+ bestRookPositions[i]" if you want, but it doesn't work well
+                        }
+                        if (TABLA[i, j].GetPiesa().GetType() == typeof(Regina) && TABLA[i, j].GetPiesa().GetisAlb() == turn)
+                        {
+                            material += (queenValue); // plus "+ bestQueenPositions[i]" if you want, but it doesn't work well
+                        }
+                        if (TABLA[i, j].GetPiesa().GetType() == typeof(Rege) && TABLA[i, j].GetPiesa().GetisAlb() == turn)
+                        {
+                            material += (kingValue); // plus "+ bestKingPositions[i]" if you want, but it doesn't work well
+                        }
+                    }
+                }
+            }
+            return material;
+        }
+        public void MovePiece(int xAnte, int yAnte, int xNew, int yNew) {
+
+            TABLA[xNew,yNew].SetPiesa(TABLA[xAnte, yAnte].GetPiesa());
+            TABLA[xNew, yNew].SetIsOcupat(true);
+
+            TABLA[xAnte, yAnte].SetPiesa(null);
+            TABLA[xAnte, yAnte].SetIsOcupat(false);
+        }
+
+        public object Clone()
+        {
+
+            return this.MemberwiseClone();
+
+        }
     }
-
-
 }
+
+
+
 
