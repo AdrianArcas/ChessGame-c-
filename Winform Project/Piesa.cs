@@ -726,7 +726,7 @@ namespace Winform_Project
 
             // Locada
 
-            if (isMutat == false && TablaMea.TABLA[x + 3, y].GetPiesa() != null)
+            /*if (isMutat == false && TablaMea.TABLA[x + 3, y].GetPiesa() != null)
                 if (TablaMea.TABLA[x + 3, y].GetPiesa().Getnume() == "Tura")
                 {
 
@@ -738,7 +738,7 @@ namespace Winform_Project
                                 TablaMea.TABLA[x + 2, y].SetIsLegal(true);
 
                         }
-                }
+                }*/
 
 
             if (isMutat == false && TablaMea.TABLA[x - 4, y].GetPiesa() != null)

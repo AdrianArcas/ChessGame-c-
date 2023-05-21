@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Winform_Project
 {
-    public class Tabla : ICloneable
+    public class Tabla
 
     {
         public Casuta[,] TABLA;
@@ -212,7 +212,7 @@ namespace Winform_Project
             for (int i = 0; i < dimensiune; i++)
             {
                 for (int j = 0; j < dimensiune; j++)
-                {
+               {
                     if (TABLA[i, j].GetIsOcupat() == true && TABLA[i, j].GetPiesa().GetisAlb() == turn)
                     {
 
@@ -297,12 +297,6 @@ namespace Winform_Project
             TABLA[xAnte, yAnte].SetIsOcupat(false);
         }
 
-        public object Clone()
-        {
-
-            return this.MemberwiseClone();
-
-        }
     }
 }
 

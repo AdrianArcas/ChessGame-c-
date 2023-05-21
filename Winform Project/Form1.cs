@@ -12,7 +12,7 @@ namespace Winform_Project
 {
     public partial class Form1 : Form
     {
-        public AI AI = new AI();
+        public AI AI = new AI(1000);
         public static Form1 Instance;
         public Tabla Mytabla = new Tabla(); //cream o tabla cu celule de forma casuta
         public Button[,] btnTabla = new Button[Tabla.dimensiune, Tabla.dimensiune];//matrice de butoane
@@ -112,12 +112,6 @@ namespace Winform_Project
             Casuta Casutacurenta = Mytabla.TABLA[x, y];
             Piesa PiesaCurenta = Casutacurenta.GetPiesa();
 
-
-            if (Turn == false) {
-                MessageBox.Show(AI.CalculatePoint(Mytabla, Turn).ToString());
-                //miscarea Ai
-                Turn = !Turn;
-            }
 
 
             //Cazul 1: Dam click be o casuta care nu are nicio piesa si nu e miscare legala
@@ -285,7 +279,14 @@ namespace Winform_Project
                 Mytabla.CuratareisLegal();
 
             }
-
+            if (Turn == false)
+            {
+                Coloreaza(btnTabla, Mytabla);
+                //MessageBox.Show(AI.CalculatePoint(Mytabla, Turn).ToString());
+                AI.MoveBestMove(ref Mytabla);
+                Coloreaza(btnTabla, Mytabla);
+                Turn = !Turn;
+            }
             Coloreaza(btnTabla, Mytabla);
 
         }
